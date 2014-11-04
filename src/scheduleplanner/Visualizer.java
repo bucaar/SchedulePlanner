@@ -7,7 +7,10 @@ package scheduleplanner;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JApplet;
+import javax.swing.Timer;
 
 /**
  *
@@ -49,5 +52,15 @@ public class Visualizer extends JApplet{
     
     public Visualizer(Schedule schedule){
         this.schedule = schedule;
+        
+        Timer animationTimer = new Timer(1, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                repaint();
+            }
+        });
+        
+        animationTimer.setRepeats(true);
+        animationTimer.start();
     }
 }

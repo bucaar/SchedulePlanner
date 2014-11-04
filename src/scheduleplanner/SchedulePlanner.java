@@ -146,23 +146,23 @@ public class SchedulePlanner {
     
     public static void startApplet(Schedule s)
     {
-       final JApplet applet = new Visualizer(s); 
-       
-       
-       JFrame frame = new JFrame(); 
-       frame.setSize(800, 400);
-       applets.add(frame);
-       
-       frame.getContentPane().add(applet);
-       frame.addWindowListener(new WindowAdapter() {
-           public void windowClosing(WindowEvent e) {
-               applet.stop();
-               applet.destroy();
-           }
-       });
-       
-       applet.start();
-       frame.setVisible(true);
+        final JApplet applet = new Visualizer(s); 
+
+
+        JFrame frame = new JFrame(); 
+        frame.setSize(800, 400);
+        applets.add(frame);
+
+        frame.getContentPane().add(applet);
+        frame.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                applet.stop();
+                applet.destroy();
+            }
+        });
+
+        applet.start();
+        frame.setVisible(true);
     }
     
 }
