@@ -460,16 +460,16 @@ public class Client extends javax.swing.JFrame {
         if(!fss.contains(":"))fss+=":00";
         if(!fes.contains(":"))fes+=":00";
 
-        double msd = Double.parseDouble(mss.split(":")[0])+Double.parseDouble(mss.split(":")[1])/60; if(msd < 7 && msd != 0) msd += 12;
-        double med = Double.parseDouble(mes.split(":")[0])+Double.parseDouble(mes.split(":")[1])/60; if(med < 7 && med != 0) med += 12;
-        double tsd = Double.parseDouble(tss.split(":")[0])+Double.parseDouble(tss.split(":")[1])/60; if(tsd < 7 && tsd != 0) tsd += 12;
-        double ted = Double.parseDouble(tes.split(":")[0])+Double.parseDouble(tes.split(":")[1])/60; if(ted < 7 && ted != 0) ted += 12;
-        double wsd = Double.parseDouble(wss.split(":")[0])+Double.parseDouble(wss.split(":")[1])/60; if(wsd < 7 && wsd != 0) wsd += 12;
-        double wed = Double.parseDouble(wes.split(":")[0])+Double.parseDouble(wes.split(":")[1])/60; if(wed < 7 && wed != 0) wed += 12;
-        double rsd = Double.parseDouble(rss.split(":")[0])+Double.parseDouble(rss.split(":")[1])/60; if(rsd < 7 && rsd != 0) rsd += 12;
-        double red = Double.parseDouble(res.split(":")[0])+Double.parseDouble(res.split(":")[1])/60; if(red < 7 && red != 0) red += 12;
-        double fsd = Double.parseDouble(fss.split(":")[0])+Double.parseDouble(fss.split(":")[1])/60; if(fsd < 7 && fsd != 0) fsd += 12;
-        double fed = Double.parseDouble(fes.split(":")[0])+Double.parseDouble(fes.split(":")[1])/60; if(fed < 7 && fed != 0) fed += 12;
+        double msd = Double.parseDouble(mss.split(":")[0])+Double.parseDouble(mss.split(":")[1])/60; if(msd < 8 && msd != 0) msd += 12;
+        double med = Double.parseDouble(mes.split(":")[0])+Double.parseDouble(mes.split(":")[1])/60; if(med < 8 && med != 0) med += 12;
+        double tsd = Double.parseDouble(tss.split(":")[0])+Double.parseDouble(tss.split(":")[1])/60; if(tsd < 8 && tsd != 0) tsd += 12;
+        double ted = Double.parseDouble(tes.split(":")[0])+Double.parseDouble(tes.split(":")[1])/60; if(ted < 8 && ted != 0) ted += 12;
+        double wsd = Double.parseDouble(wss.split(":")[0])+Double.parseDouble(wss.split(":")[1])/60; if(wsd < 8 && wsd != 0) wsd += 12;
+        double wed = Double.parseDouble(wes.split(":")[0])+Double.parseDouble(wes.split(":")[1])/60; if(wed < 8 && wed != 0) wed += 12;
+        double rsd = Double.parseDouble(rss.split(":")[0])+Double.parseDouble(rss.split(":")[1])/60; if(rsd < 8 && rsd != 0) rsd += 12;
+        double red = Double.parseDouble(res.split(":")[0])+Double.parseDouble(res.split(":")[1])/60; if(red < 8 && red != 0) red += 12;
+        double fsd = Double.parseDouble(fss.split(":")[0])+Double.parseDouble(fss.split(":")[1])/60; if(fsd < 8 && fsd != 0) fsd += 12;
+        double fed = Double.parseDouble(fes.split(":")[0])+Double.parseDouble(fes.split(":")[1])/60; if(fed < 8 && fed != 0) fed += 12;
 
         double[] startTimes = new double[]{
             msd, tsd, wsd, rsd, fsd
@@ -541,16 +541,16 @@ public class Client extends javax.swing.JFrame {
         double fsd = 0;
         double fed = 0;
         
-        if(cMon.isSelected()) msd = Double.parseDouble(tSs.split(":")[0])+Double.parseDouble(tSs.split(":")[1])/60; if(msd < 7 && msd != 0) msd += 12;
-        if(cMon.isSelected()) med = Double.parseDouble(tSe.split(":")[0])+Double.parseDouble(tSe.split(":")[1])/60; if(med < 7 && med != 0) med += 12;
-        if(cTue.isSelected()) tsd = Double.parseDouble(tSs.split(":")[0])+Double.parseDouble(tSs.split(":")[1])/60; if(tsd < 7 && tsd != 0) tsd += 12;
-        if(cTue.isSelected()) ted = Double.parseDouble(tSe.split(":")[0])+Double.parseDouble(tSe.split(":")[1])/60; if(ted < 7 && ted != 0) ted += 12;
-        if(cWed.isSelected()) wsd = Double.parseDouble(tSs.split(":")[0])+Double.parseDouble(tSs.split(":")[1])/60; if(wsd < 7 && wsd != 0) wsd += 12;
-        if(cWed.isSelected()) wed = Double.parseDouble(tSe.split(":")[0])+Double.parseDouble(tSe.split(":")[1])/60; if(wed < 7 && wed != 0) wed += 12;
-        if(cThu.isSelected()) rsd = Double.parseDouble(tSs.split(":")[0])+Double.parseDouble(tSs.split(":")[1])/60; if(rsd < 7 && rsd != 0) rsd += 12;
-        if(cThu.isSelected()) red = Double.parseDouble(tSe.split(":")[0])+Double.parseDouble(tSe.split(":")[1])/60; if(red < 7 && red != 0) red += 12;
-        if(cFri.isSelected()) fsd = Double.parseDouble(tSs.split(":")[0])+Double.parseDouble(tSs.split(":")[1])/60; if(fsd < 7 && fsd != 0) fsd += 12;
-        if(cFri.isSelected()) fed = Double.parseDouble(tSe.split(":")[0])+Double.parseDouble(tSe.split(":")[1])/60; if(fed < 7 && fed != 0) fed += 12;
+        if(cMon.isSelected()) msd = Double.parseDouble(tSs.split(":")[0])+Double.parseDouble(tSs.split(":")[1])/60; if(msd < 8 && msd != 0) msd += 12;
+        if(cMon.isSelected()) med = Double.parseDouble(tSe.split(":")[0])+Double.parseDouble(tSe.split(":")[1])/60; if(med < 8 && med != 0) med += 12;
+        if(cTue.isSelected()) tsd = Double.parseDouble(tSs.split(":")[0])+Double.parseDouble(tSs.split(":")[1])/60; if(tsd < 8 && tsd != 0) tsd += 12;
+        if(cTue.isSelected()) ted = Double.parseDouble(tSe.split(":")[0])+Double.parseDouble(tSe.split(":")[1])/60; if(ted < 8 && ted != 0) ted += 12;
+        if(cWed.isSelected()) wsd = Double.parseDouble(tSs.split(":")[0])+Double.parseDouble(tSs.split(":")[1])/60; if(wsd < 8 && wsd != 0) wsd += 12;
+        if(cWed.isSelected()) wed = Double.parseDouble(tSe.split(":")[0])+Double.parseDouble(tSe.split(":")[1])/60; if(wed < 8 && wed != 0) wed += 12;
+        if(cThu.isSelected()) rsd = Double.parseDouble(tSs.split(":")[0])+Double.parseDouble(tSs.split(":")[1])/60; if(rsd < 8 && rsd != 0) rsd += 12;
+        if(cThu.isSelected()) red = Double.parseDouble(tSe.split(":")[0])+Double.parseDouble(tSe.split(":")[1])/60; if(red < 8 && red != 0) red += 12;
+        if(cFri.isSelected()) fsd = Double.parseDouble(tSs.split(":")[0])+Double.parseDouble(tSs.split(":")[1])/60; if(fsd < 8 && fsd != 0) fsd += 12;
+        if(cFri.isSelected()) fed = Double.parseDouble(tSe.split(":")[0])+Double.parseDouble(tSe.split(":")[1])/60; if(fed < 8 && fed != 0) fed += 12;
 
         double[] startTimes = new double[]{
             msd, tsd, wsd, rsd, fsd

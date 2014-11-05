@@ -98,7 +98,8 @@ public class Subject {
         String result = "";
         result += time>12?(int)time-12:(int)time;
         result += ":";
-        result += (int)((time % 1)*60+1);
+        int minutes = (int)Math.round((time % 1)*60);
+        result += (minutes<10?(minutes==0?"00":"0"+minutes):minutes);
         return result;
     }
 }
