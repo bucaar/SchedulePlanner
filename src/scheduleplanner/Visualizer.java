@@ -50,17 +50,19 @@ public class Visualizer extends JApplet{
         }
     }
     
-    public Visualizer(Schedule schedule){
+    public Visualizer(Schedule schedule, boolean repaint){
         this.schedule = schedule;
         
-        Timer animationTimer = new Timer(1, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e){
-                repaint();
-            }
-        });
-        
-        animationTimer.setRepeats(true);
-        animationTimer.start();
+        if(repaint){
+            Timer animationTimer = new Timer(1, new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e){
+                    repaint();
+                }
+            });
+
+            animationTimer.setRepeats(true);
+            animationTimer.start();
+        }
     }
 }

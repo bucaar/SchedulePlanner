@@ -31,7 +31,7 @@ public class SchedulePlanner {
     
     static ArrayList<JFrame> applets = new ArrayList<>();
     
-    public static void start() {
+    public static void start(boolean repaint) {
         for(int a=0;a<c1.size();a++)for(int b=0;b<c2.size();b++)
         for(int c=0;c<c3.size();c++)for(int d=0;d<c4.size();d++)
         for(int e=0;e<c5.size();e++)for(int f=0;f<c6.size();f++)
@@ -60,7 +60,7 @@ public class SchedulePlanner {
             if(s10 != null) subjects.add(s10);
             Schedule schedule = new Schedule(subjects);
             if(!schedule.isConflicting()){
-                startApplet(schedule);
+                startApplet(schedule, repaint);
             }
         }
     }
@@ -144,9 +144,9 @@ public class SchedulePlanner {
         }
     }
     
-    public static void startApplet(Schedule s)
+    public static void startApplet(Schedule s, boolean repaint)
     {
-        final JApplet applet = new Visualizer(s); 
+        final JApplet applet = new Visualizer(s, repaint); 
 
 
         JFrame frame = new JFrame(); 
