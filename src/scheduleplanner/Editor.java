@@ -78,7 +78,7 @@ public class Editor extends JFrame{
                             file = dialog.getSelectedFile();
                         }
                         BufferedReader input = new BufferedReader(new FileReader(file));
-                        ArrayList<String> names = new ArrayList();
+                        ArrayList<String> names = Client.names;
                         SchedulePlanner.clearClasses();
                         while(input.ready()){
                             String current = input.readLine();
