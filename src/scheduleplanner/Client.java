@@ -68,7 +68,6 @@ public class Client extends javax.swing.JFrame {
         bOptions = new javax.swing.JButton();
         bDisp = new javax.swing.JButton();
         bHelp = new javax.swing.JButton();
-        cRepaint = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Schedule Planner");
@@ -387,8 +386,6 @@ public class Client extends javax.swing.JFrame {
             }
         });
 
-        cRepaint.setText("Repaint");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -402,8 +399,6 @@ public class Client extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bHelp)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(cRepaint)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bDisp)))
                 .addContainerGap())
         );
@@ -416,8 +411,7 @@ public class Client extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bDisp)
                     .addComponent(bOptions)
-                    .addComponent(bHelp)
-                    .addComponent(cRepaint))
+                    .addComponent(bHelp))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -428,7 +422,7 @@ public class Client extends javax.swing.JFrame {
     private void bDispActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDispActionPerformed
         SchedulePlanner.closeVisulaizers();
         SchedulePlanner.fillEmpties();
-        SchedulePlanner.start(cRepaint.isSelected());
+        SchedulePlanner.start();
     }//GEN-LAST:event_bDispActionPerformed
     
     
@@ -633,7 +627,6 @@ public class Client extends javax.swing.JFrame {
     private javax.swing.JButton bOptions;
     private javax.swing.JCheckBox cFri;
     private javax.swing.JCheckBox cMon;
-    private javax.swing.JCheckBox cRepaint;
     private javax.swing.JCheckBox cThu;
     private javax.swing.JCheckBox cTue;
     private javax.swing.JCheckBox cWed;
