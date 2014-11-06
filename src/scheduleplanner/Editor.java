@@ -14,10 +14,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import javax.swing.*;
-import javax.swing.event.*;
-import sun.security.action.OpenFileInputStreamAction;
 
 /**
  *
@@ -78,7 +75,7 @@ public class Editor extends JFrame{
                             file = dialog.getSelectedFile();
                         }
                         BufferedReader input = new BufferedReader(new FileReader(file));
-                        ArrayList<String> names = Client.names;
+                        String[] names = Client.names;
                         SchedulePlanner.clearClasses();
                         while(input.ready()){
                             String current = input.readLine();
@@ -98,8 +95,24 @@ public class Editor extends JFrame{
                                 endTimes3[i] = Double.parseDouble(endTimes2[i]);
                             }
                             
-                            if(!names.contains(name)) names.add(name);
-                            SchedulePlanner.addClass(names.indexOf(name), name, startTimes3, endTimes3);
+                            boolean added = false;
+                            for(int i=0;i<names.length;i++){
+                                if(names[i] != null && names[i].equals(name)){
+                                    SchedulePlanner.addClass(i, name, startTimes3, endTimes3);
+                                    added = true;
+                                    break;
+                                }
+                            }
+                            if(!added){
+                                for(int i=0;i<names.length;i++){
+                                    if(names[i] == null){
+                                        names[i] = name;
+                                        SchedulePlanner.addClass(i, name, startTimes3, endTimes3);
+                                        added = true;
+                                        break;
+                                    }
+                                }
+                            }
                         }
                         input.close();
                         dispose();

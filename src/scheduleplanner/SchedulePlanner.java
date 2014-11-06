@@ -82,16 +82,67 @@ public class SchedulePlanner {
     }
     
     public static void dropClass(Subject s){
-        if(c1.remove(s))numberOfClasses--;
-        if(c2.remove(s))numberOfClasses--;
-        if(c3.remove(s))numberOfClasses--;
-        if(c4.remove(s))numberOfClasses--;
-        if(c5.remove(s))numberOfClasses--;
-        if(c6.remove(s))numberOfClasses--;
-        if(c7.remove(s))numberOfClasses--;
-        if(c8.remove(s))numberOfClasses--;
-        if(c9.remove(s))numberOfClasses--;
-        if(c10.remove(s))numberOfClasses--;
+        String[] names = Client.names;
+        if(c1.remove(s)){
+            if(c1.isEmpty()){
+                names[0] = null;
+            }
+            numberOfClasses--;
+        }
+        if(c2.remove(s)){
+            if(c2.isEmpty()){
+                names[1] = null;
+            }
+            numberOfClasses--;
+        }
+        if(c3.remove(s)){
+            if(c3.isEmpty()){
+                names[2] = null;
+            }
+            numberOfClasses--;
+        }
+        if(c4.remove(s)){
+            if(c4.isEmpty()){
+                names[3] = null;
+            }
+            numberOfClasses--;
+        }
+        if(c5.remove(s)){
+            if(c5.isEmpty()){
+                names[4] = null;
+            }
+            numberOfClasses--;
+        }
+        if(c6.remove(s)){
+            if(c6.isEmpty()){
+                names[5] = null;
+            }
+            numberOfClasses--;
+        }
+        if(c7.remove(s)){
+            if(c7.isEmpty()){
+                names[6] = null;
+            }
+            numberOfClasses--;
+        }
+        if(c8.remove(s)){
+            if(c8.isEmpty()){
+                names[7] = null;
+            }
+            numberOfClasses--;
+        }
+        if(c9.remove(s)){
+            if(c9.isEmpty()){
+                names[8] = null;
+            }
+            numberOfClasses--;
+        }
+        if(c10.remove(s)){
+            if(c10.isEmpty()){
+                names[9] = null;
+            }
+            numberOfClasses--;
+        }
     }
     
     public static int getNumberOfClasses(){
@@ -100,6 +151,7 @@ public class SchedulePlanner {
     
     public static void clearClasses(){
         numberOfClasses = 0;
+        Client.names = new String[10];
         c1 = new ArrayList<>();
         c2 = new ArrayList<>();
         c3 = new ArrayList<>();
@@ -152,9 +204,10 @@ public class SchedulePlanner {
         JFrame frame = new JFrame(); 
         frame.setTitle("Schedule "+id);
         frame.setSize(800, 400);
+        
         applets.add(frame);
 
-        frame.getContentPane().add(applet);
+        frame.add(applet);
         frame.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 applet.stop();

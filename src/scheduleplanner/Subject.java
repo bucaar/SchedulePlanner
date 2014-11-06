@@ -58,7 +58,7 @@ public class Subject {
         String string = "";
         string += name;
         string += " [";
-        if(getStartTime(0)>0) string += "M("+timeToString(getStartTime(0))+"-"+timeToString(getEndTime(0))+")";
+        if(getStartTime(0)>0) string += "M:("+timeToString(getStartTime(0))+"-"+timeToString(getEndTime(0))+")";
         if(getStartTime(1)>0) string += " T:("+timeToString(getStartTime(1))+"-"+timeToString(getEndTime(1))+")";
         if(getStartTime(2)>0) string += " W:("+timeToString(getStartTime(2))+"-"+timeToString(getEndTime(2))+")";
         if(getStartTime(3)>0) string += " Th:("+timeToString(getStartTime(3))+"-"+timeToString(getEndTime(3))+")";

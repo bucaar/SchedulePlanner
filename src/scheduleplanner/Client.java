@@ -5,7 +5,6 @@
  */
 package scheduleplanner;
 
-import java.util.ArrayList;
 import javax.swing.JFrame;
 
 /**
@@ -478,8 +477,27 @@ public class Client extends javax.swing.JFrame {
             med, ted, wed, red, fed
         };
 
-        if(!names.contains(tName.getText())) names.add(tName.getText());
-        SchedulePlanner.addClass(names.indexOf(tName.getText()), tName.getText(), startTimes, endTimes);
+        boolean added = false;
+        for(int i=0;i<names.length;i++){
+            if(names[i] != null && names[i].equals(tName.getText())){
+                SchedulePlanner.addClass(i, tName.getText(), startTimes, endTimes);
+                added = true;
+                break;
+            }
+        }
+        if(!added){
+            for(int i=0;i<names.length;i++){
+                if(names[i] == null){
+                    names[i] = tName.getText();
+                    SchedulePlanner.addClass(i, tName.getText(), startTimes, endTimes);
+                    added = true;
+                    break;
+                }
+            }
+        }
+        if(!added){
+            System.out.println("Problem occured.");
+        }
     }//GEN-LAST:event_bAddActionPerformed
 
     private void tMeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tMeActionPerformed
@@ -559,8 +577,27 @@ public class Client extends javax.swing.JFrame {
             med, ted, wed, red, fed
         };
 
-        if(!names.contains(tName1.getText())) names.add(tName1.getText());
-        SchedulePlanner.addClass(names.indexOf(tName1.getText()), tName1.getText(), startTimes, endTimes);
+        boolean added = false;
+        for(int i=0;i<names.length;i++){
+            if(names[i] != null && names[i].equals(tName1.getText())){
+                SchedulePlanner.addClass(i, tName1.getText(), startTimes, endTimes);
+                added = true;
+                break;
+            }
+        }
+        if(!added){
+            for(int i=0;i<names.length;i++){
+                if(names[i] == null){
+                    names[i] = tName1.getText();
+                    SchedulePlanner.addClass(i, tName1.getText(), startTimes, endTimes);
+                    added = true;
+                    break;
+                }
+            }
+        }
+        if(!added){
+            System.out.println("Problem occured.");
+        }
     }//GEN-LAST:event_bAdd1ActionPerformed
 
     private void cWedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cWedActionPerformed
@@ -618,7 +655,7 @@ public class Client extends javax.swing.JFrame {
         });
     }
 
-    public static ArrayList<String> names = new ArrayList();
+    public static String[] names = new String[10];
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bAdd;
     private javax.swing.JButton bAdd1;
