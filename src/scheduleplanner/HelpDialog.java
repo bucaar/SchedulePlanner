@@ -77,7 +77,10 @@ public class HelpDialog extends JFrame{
             + "for each class in the database.  Making any modifications to classes after\n"
             + "the Schedules are displayed will not update changes, and will require you\n"
             + "to press the Display Schedules button again.  Pressing the button will\n"
-            + "close any existing Schedule windows and open a new set of them.\n\n"
+            + "close any existing Schedule windows and open a new set of them.\n"
+            + "If the schedules do not display any graphics after being convered up by \n"
+            + "another window, by checking the Repaint checkbox it will often update the\n"
+            + "window so that problem won't exist.\n\n"
             
             + "Displaying the Help Menu:\n"
             + "Yup. Nailed it!";
