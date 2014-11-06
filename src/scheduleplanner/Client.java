@@ -12,7 +12,7 @@ import javax.swing.JFrame;
  * @author Aaron
  */
 public class Client extends javax.swing.JFrame {
-
+ 
     /**
      * Creates new form Client
      */
