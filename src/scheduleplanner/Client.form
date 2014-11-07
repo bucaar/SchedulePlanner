@@ -34,6 +34,8 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="bHelp" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
+                      <Component id="lStatus" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="bDisp" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -51,6 +53,7 @@
                   <Component id="bDisp" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="bOptions" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="bHelp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lStatus" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -511,6 +514,8 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bHelpActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lStatus">
     </Component>
   </SubComponents>
 </Form>

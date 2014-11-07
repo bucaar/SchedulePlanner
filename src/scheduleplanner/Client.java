@@ -5,13 +5,20 @@
  */
 package scheduleplanner;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Calendar;
+import java.util.TimeZone;
 import javax.swing.JFrame;
+import javax.swing.Timer;
 
 /**
  *
  * @author Aaron
  */
 public class Client extends javax.swing.JFrame {
+    
+    private static int YEAR = 2014, MONTH = 11, DAY = 8;
 
     /**
      * Creates new form Client
@@ -67,6 +74,7 @@ public class Client extends javax.swing.JFrame {
         bOptions = new javax.swing.JButton();
         bDisp = new javax.swing.JButton();
         bHelp = new javax.swing.JButton();
+        lStatus = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Schedule Planner");
@@ -398,6 +406,8 @@ public class Client extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bHelp)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lStatus)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bDisp)))
                 .addContainerGap())
         );
@@ -410,7 +420,8 @@ public class Client extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bDisp)
                     .addComponent(bOptions)
-                    .addComponent(bHelp))
+                    .addComponent(bHelp)
+                    .addComponent(lStatus))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -495,8 +506,11 @@ public class Client extends javax.swing.JFrame {
                 }
             }
         }
-        if(!added){
-            System.out.println("Problem occured.");
+        if(added){
+            setStatus("Class Added.", 1000);
+        }
+        else{
+            setStatus("Failed to Add.", 1000);
         }
     }//GEN-LAST:event_bAddActionPerformed
 
@@ -595,8 +609,11 @@ public class Client extends javax.swing.JFrame {
                 }
             }
         }
-        if(!added){
-            System.out.println("Problem occured.");
+        if(added){
+            setStatus("Class Added.", 1000);
+        }
+        else{
+            setStatus("Failed to Add.", 1000);
         }
     }//GEN-LAST:event_bAdd1ActionPerformed
 
@@ -648,11 +665,24 @@ public class Client extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Client().setVisible(true);
+        Calendar date = Calendar.getInstance(TimeZone.getTimeZone("CST"));
+        if(date.get(Calendar.YEAR) == YEAR && date.get(Calendar.MONTH) == MONTH-1 && date.get(Calendar.DATE) < DAY){
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    new Client().setVisible(true);
+                }
+            });
+        }
+    }
+    
+    public void setStatus(String msg, int del){
+        lStatus.setText(msg);
+        Timer timer = new Timer(del, new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                lStatus.setText("");
             }
         });
+        timer.start();
     }
 
     public static String[] names = new String[10];
@@ -681,6 +711,7 @@ public class Client extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel lStatus;
     private javax.swing.JTextField tE;
     private javax.swing.JTextField tFe;
     private javax.swing.JTextField tFs;
