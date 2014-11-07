@@ -435,8 +435,6 @@ public class Client extends javax.swing.JFrame {
         SchedulePlanner.start();
     }//GEN-LAST:event_bDispActionPerformed
     
-    
-    
     private void bOptionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bOptionsActionPerformed
         // TODO add your handling code here:
         SchedulePlanner.fillEmpties();
