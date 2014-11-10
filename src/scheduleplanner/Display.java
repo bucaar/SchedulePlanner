@@ -24,8 +24,8 @@ public class Display extends JPanel {
     protected void paintComponent(Graphics g){
         super.paintComponent(g);
         int padding = 14;
-        int dayWidth = (getWidth()-2*padding)/5;
-        int dayHeight = (getHeight()-2*padding);
+        int dayWidth = (getWidth()-padding)/5;
+        int dayHeight = (getHeight()-padding);
         int startTime = 7;
         int endTime = 21;
         int scale = dayHeight/(endTime-startTime);
@@ -36,17 +36,21 @@ public class Display extends JPanel {
             g.drawString(""+((i+startTime-1)%12+1), 0, padding+i*scale+5);
         }
         
-        for(int s=0;s<schedule.getNumber();s++){
+        for(int s=0;s<schedule.getSize();s++){
             for(int d=0;d<5;d++){
-                int x = padding+d*dayWidth;
-                int y = (int)(padding+(schedule.getSubject(s).getStartTime(d)-startTime)*scale);
-                int dy = (int)((schedule.getSubject(s).getEndTime(d)-schedule.getSubject(s).getStartTime(d))*scale);
-                g.setColor(Color.GRAY);
-                g.fillRect(x, y, dayWidth, dy);
-                g.setColor(Color.BLACK);
-                g.drawRect(x, y, dayWidth, dy);
-                g.setColor(Color.BLACK);
-                g.drawString(schedule.getSubject(s).getName(), x, y+10);
+                double thisStartTime = schedule.getSubject(s).getStartTime(d);
+                double thisEndTime = schedule.getSubject(s).getEndTime(d);
+                if(thisStartTime > 0 || thisEndTime > thisStartTime){
+                    int x = padding+d*dayWidth;
+                    int y = (int)(padding+(thisStartTime-startTime)*scale);
+                    int dy = (int)((thisEndTime-thisStartTime)*scale);
+                    g.setColor(Color.GRAY);
+                    g.fillRect(x, y, dayWidth, dy);
+                    g.setColor(Color.BLACK);
+                    g.drawRect(x, y, dayWidth, dy);
+                    g.setColor(Color.BLACK);
+                    g.drawString(schedule.getSubject(s).getName(), x, y+10);
+                }
             }
         }
     }

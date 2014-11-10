@@ -37,7 +37,7 @@ public class Schedule {
         return (Subject) subjects.get(s);
     }
     
-    public int getNumber(){
+    public int getSize(){
         return subjects.size();
     }
 }

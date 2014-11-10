@@ -29,7 +29,7 @@ public class SchedulePlanner {
     static ArrayList<Subject> c9 = new ArrayList<>();
     static ArrayList<Subject> c10 = new ArrayList<>();
     
-    static ArrayList<JFrame> applets = new ArrayList<>();
+    static ArrayList<JFrame> windows = new ArrayList<>();
     
     public static void start() {
         int current = 0;
@@ -191,22 +191,20 @@ public class SchedulePlanner {
     }
     
     public static void closeVisulaizers(){
-        for(int i=0;i<applets.size();i++){
-            JFrame f = applets.get(i);
+        for(int i=0;i<windows.size();i++){
+            JFrame f = windows.get(i);
             f.dispose();
         }
     }
     
     public static void startApplet(Schedule s, int id)
     {
-        final JApplet applet = new Visualizer(s); 
-
         JFrame frame = new JFrame(); 
         frame.setTitle("Schedule "+id);
         frame.setSize(800, 400);
-        
-        applets.add(frame);
+        windows.add(frame);
 
+        final JApplet applet = new Visualizer(s); 
         frame.add(applet);
         frame.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
@@ -218,5 +216,4 @@ public class SchedulePlanner {
         applet.start();
         frame.setVisible(true);
     }
-    
 }

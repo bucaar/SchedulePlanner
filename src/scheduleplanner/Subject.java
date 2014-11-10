@@ -96,10 +96,11 @@ public class Subject {
     
     private String timeToString(double time){
         String result = "";
-        result += time>12?(int)time-12:(int)time;
+        int hour = (int)time;
+        result += hour>12 ? hour-12 : hour;
         result += ":";
         int minutes = (int)Math.round((time % 1)*60);
-        result += (minutes<10?(minutes==0?"00":"0"+minutes):minutes);
+        result += (minutes<10 ? (minutes==0 ? "00" : "0"+minutes) : minutes);
         return result;
     }
 }

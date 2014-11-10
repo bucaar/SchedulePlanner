@@ -18,7 +18,7 @@ import javax.swing.Timer;
  */
 public class Client extends javax.swing.JFrame {
     
-    private static int YEAR = 2014, MONTH = 11, DAY = 8;
+    private static int YEAR = 2014, MONTH = 12, DAY = 31;
 
     /**
      * Creates new form Client
@@ -664,7 +664,7 @@ public class Client extends javax.swing.JFrame {
 
         /* Create and display the form */
         Calendar date = Calendar.getInstance(TimeZone.getTimeZone("CST"));
-        if(date.get(Calendar.YEAR) == YEAR && date.get(Calendar.MONTH) == MONTH-1 && date.get(Calendar.DATE) < DAY){
+        if(date.get(Calendar.YEAR) <= YEAR && date.get(Calendar.MONTH) <= MONTH-1 && date.get(Calendar.DATE) <= DAY){
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
                     new Client().setVisible(true);
